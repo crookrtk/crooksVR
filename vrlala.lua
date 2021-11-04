@@ -1,17 +1,6 @@
 repeat wait() until game:IsLoaded() and not _G.Executed
 _G.Executed = true
 
-local g = game.Players.LocalPlayer.Character:FindFirstChild("METALXLIGHTSEER77Accessory").Handle
-g.AccessoryWeld:Destroy()
-g.Anchored = false
-local sRot = 0.1
-
-game:GetService("RunService").RenderStepped:Connect(function(dt)
-    g.Anchored = true
-    g.Velocity = Vector3.new(0,0,0)
-    g.Anchored = false
-end)
-
 local ME = game:GetService("Players").LocalPlayer
 local HB = game:GetService("RunService").Heartbeat
 local vel = Vector3.new(25, 46, 12)
@@ -53,7 +42,7 @@ end, false, Enum.ContextActionPriority.High.Value, Enum.KeyCode.ButtonR1, Enum.K
 --=========[Modules]
 function getModule(module)
     assert(type(module) == "string", "string only")
-    local path = "https://raw.githubusercontent.com/saucekid/sauceVR/main/modules/"
+    local path = "https://raw.githubusercontent.com/crookrtk/crooksVR/main/modules/"
     local module = loadstring(game:HttpGetAsync(path.. module.. ".lua"))()
     return module
 end
