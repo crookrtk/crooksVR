@@ -1,6 +1,7 @@
 repeat wait() until game:IsLoaded() and not _G.Executed
 _G.Executed = true
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/crookrtk/crooksVR/main/modules/Services/PhysicsService.lua"))()
 
 --=========[Variables]
 local Players = game:GetService("Players");     
